@@ -74,6 +74,10 @@ function play(){
     showElementById("play-ground");
     hideElementById("final-score");
 
+    document.getElementById("mykey").addEventListener("click", function(e){
+        e.target.focus();
+    })
+
 setTextElementValueById("current-score", 0);
 setTextElementValueById("current-life", 5);
 
