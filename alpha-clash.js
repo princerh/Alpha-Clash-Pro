@@ -10,6 +10,9 @@
 
 const audio = new Audio();
 let isGamePlayOn = false;
+
+const artBoard = document.getElementById("art-board");
+
 function handlekeyboardButtonPress(event){
     if(isGamePlayOn == false) return;
     const playerPressed = event.key;
@@ -49,12 +52,15 @@ setTextElementValueById("current-score", updatedScore);
         // get the current life Number
         // reduce the life count 
         // set the life now 
-
+        
         const currentLife = getTextElementValueById("current-life")
 
         const updatedLife = currentLife - 1;
         setTextElementValueById("current-life", updatedLife);
 
+        const updatedLifePercentage = (updatedLife/5) * 100;
+
+        artBoard.style.background = `linear-gradient(#FFFFFFB3 ${updatedLifePercentage}%,red)`;
 
         if(updatedLife === 0){
             gameOver();
@@ -107,4 +113,7 @@ function gameOver(){
    const currentAlphabet = getElementTextById("current-alphabet");
    removeBackgroundColorById(currentAlphabet);
 isGamePlayOn = false;
+
+artBoard.style.background = "linear-gradient(#FFFFFFB3 100%,red)";
+
 }
