@@ -77,7 +77,7 @@ function play(){
 setTextElementValueById("current-score", 0);
 setTextElementValueById("current-life", 5);
 
-
+document.body.focus();
     continueGame();
 }
 
