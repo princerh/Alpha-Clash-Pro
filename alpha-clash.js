@@ -8,7 +8,10 @@
 // playgroundSection.classList.remove("hidden");
 // }
 
+const audio = new Audio();
+let isGamePlayOn = false;
 function handlekeyboardButtonPress(event){
+    if(isGamePlayOn == false) return;
     const playerPressed = event.key;
     // console.log(playerPressed);
 
@@ -23,6 +26,10 @@ function handlekeyboardButtonPress(event){
 
     if(playerPressed === expectedAlphabet){
         // console.log("point") 
+audio.src = "../audio/success.mp3";
+audio.play();
+
+
 
 const currentScore = getTextElementValueById("current-score");
 const updatedScore = currentScore + 1;
@@ -36,6 +43,9 @@ setTextElementValueById("current-score", updatedScore);
     else
     {
         console.log("missed");
+
+        audio.src = "../audio/wrong.mp3"
+        audio.play();
         // get the current life Number
         // reduce the life count 
         // set the life now 
@@ -74,14 +84,13 @@ function play(){
     showElementById("play-ground");
     hideElementById("final-score");
 
-    document.getElementById("mykey").addEventListener("click", function(e){
-        e.target.focus();
-    })
+    
 
 setTextElementValueById("current-score", 0);
 setTextElementValueById("current-life", 5);
 
 document.body.focus();
+isGamePlayOn = true;
     continueGame();
 }
 
@@ -97,5 +106,5 @@ function gameOver(){
 
    const currentAlphabet = getElementTextById("current-alphabet");
    removeBackgroundColorById(currentAlphabet);
-
+isGamePlayOn = false;
 }
