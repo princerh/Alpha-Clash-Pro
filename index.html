@@ -34,29 +34,29 @@
     <main class="bg-[#1E1E1E] min-h-screen bg-[url(./images/background.png)] bg-no-repeat bg-center">
 
         <!-- home section  -->
-<section id="home-screen" class="home min-h-screen flex justify-center items-center ">
+<section id="home-screen" class="home min-h-screen flex justify-center items-center">
 <div class="text-white flex flex-col justify-center items-center gap-6">
-    <h1 class= "anton uppercase font-normal text-8xl">Alpha Clash Pro</h1>
-<p class="text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+    <h1 class= "anton uppercase font-normal text-4xl lg:text-8xl">Alpha Clash Pro</h1>
+<p class="px-3 lg:px-0 lg:text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
 <button onclick="play()" class="btn bg-white text-black">Play Now</button>
 </div>
 </section>
 
 <!-- playground  -->
-<section id="play-ground" class="play-ground hidden">
+<section id="play-ground" class="play-ground hidden ">
 <div class="flex flex-col justify-center items-center gap-10 pt-10">
 <!-- screen  -->
-<div class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] ">
+<div class="artboard artboard-horizontal lg:phone-6 lg:w-4/6 border-[5px] lg:border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] ">
 
 <div class="flex justify-center" >
-    <p class="bg-[#2F2941] text-white px-4 pb-2 rounded-b-xl">Don't watch keyboard  while playing...</p>
+    <p class="bg-[#2F2941] text-white px-4 pb-2 text-xs lg:text-2xl rounded-b-xl">Don't watch keyboard  while playing...</p>
 </div>
 <div class="flex justify-center items-center h-full">
     <p id="current-alphabet" class="text-black text-9xl font-bold uppercase">Y</p>
 </div>
 </div>
 <!-- keyboard  -->
-<div>
+<div class=" text-xs lg:text-lg ">
     <div class="flex justify-center gap-1 my-1 w-full">
         <kbd id="q" class="kbd">q</kbd>
         <kbd id="w" class="kbd">w</kbd>
@@ -92,17 +92,19 @@
       </div>
 </div>
 <!-- buttton  -->
-<div class="flex justify-between w-3/4">
-    <button class="btn rounded-full bg-[#894189] text-white ">
-        Life 
-        <img src="./images/heart.svg" alt="">
-        <span id="current-life">5</span>
-      </button>
-      <button class="btn rounded-full bg-[#360490] text-white">
-        Score
-        <img src="./images/dollar.svg" alt="">
-        <span id="current-score">1</span>
-      </button>
+<div class="flex mx-auto w-4/5 justify-center">
+    <div class="flex justify-between items-center w-full gap-8 lg:gap-0  lg:w-3/4">
+        <button class="btn rounded-full bg-[#894189] text-white ">
+            Life 
+            <img src="./images/heart.svg" alt="">
+            <span id="current-life">5</span>
+          </button>
+          <button class="btn rounded-full bg-[#360490] text-white">
+            Score
+            <img src="./images/dollar.svg" alt="">
+            <span id="current-score">1</span>
+          </button>
+    </div>
 </div>
 
 </div>
